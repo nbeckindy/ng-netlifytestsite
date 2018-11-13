@@ -1,0 +1,17 @@
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput type="text" placeholder="Description" [(ngModel)]="result.description">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="number" placeholder="Cost" [(ngModel)]="result.cost">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [matDatepicker]="entryDatepicker" placeholder="Date" [(ngModel)]="result.date">
+    <mat-datepicker-toggle matSuffix [for]="entryDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #entryDatepicker></mat-datepicker>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="result" cdkFocusInitial>OK</button>
+</div>
